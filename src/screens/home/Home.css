@@ -1,2 +1,15 @@
 @charset "UTF-8";
 
+.titulo {
+    color: red;
+    text-align: center;
+}
+
+.img {
+    width: 500px;
+    height: 500px;
+    border-radius: 5px;
+    border: solid black 2px;
+    display: block; /* Muda o display de inline para block */
+    margin: 0 auto; /* Centraliza o elemento */
+}
