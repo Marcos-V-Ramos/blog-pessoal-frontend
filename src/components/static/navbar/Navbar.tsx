@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, Box, Typography } from "@material-ui/core";
 
 import "./Navbar.css"
@@ -21,13 +22,13 @@ function Navbar () {
                     </Box>
 
                     <Box display="flex" justifyContent="start">
-                        {/* <Link to="/home" className="text-decorator-none"> */}
+                        <Link to="/home" className="text-decorator-none">
                             <Box mx={1} style={{ cursor: "pointer" }}>
                                 <Typography variant="h6" color="inherit">
                                     home
                                 </Typography>
                             </Box>
-                        {/* </Link> */}
+                        </Link>
                         <Box mx={1} style={{ cursor: "pointer"}}>
                             <Typography variant="h6" color="inherit">
                                 Criar postagem
@@ -48,13 +49,13 @@ function Navbar () {
                                 cadastrar tema
                             </Typography>
                         </Box>
-                        {/* <Link to="/logout"> */}
+                        <Link to="/logout">
                             <Box mx={1} style={{ cursor: "pointer" }}>
                                 <Typography variant="h6" color="inherit">
                                     logout
                                 </Typography>
                             </Box>
-                        {/* </Link> */}
+                        </Link>
                     </Box>
 
                 </Toolbar>
