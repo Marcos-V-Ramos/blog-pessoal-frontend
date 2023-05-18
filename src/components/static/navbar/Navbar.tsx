@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Box, Typography } from "@material-ui/core";
 
 import "./Navbar.css"
 
-const Navbar = () => {
+function Navbar () {
     return(
         <>
             <AppBar 

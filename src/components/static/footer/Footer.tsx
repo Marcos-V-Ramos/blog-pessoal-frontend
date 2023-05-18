@@ -4,7 +4,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import {Typography, Grid, Box } from '@material-ui/core';
 
-const Footer = () => {
+function Footer() {
     return (
         <>
             <Grid container direction="row" justifyContent="center" alignItems="center">
