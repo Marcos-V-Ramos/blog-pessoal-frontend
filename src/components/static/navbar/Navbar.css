@@ -1,4 +1,19 @@
+@charset "UTF-8";
+
+.cursor {
+    cursor: pointer;
+    color: #FFF;
+}
+
+.cursor:hover {
+    color: #BD47EC;
+}
 .text-decorator-nome {
     text-decoration: none;
     color: #FFF;
+}
+
+.tituloPrincipal {
+    color: #B5A212;
+    font-weight: bolder;
 }

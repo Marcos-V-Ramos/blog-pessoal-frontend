@@ -1,15 +1,25 @@
 @charset "UTF-8";
 
-.titulo {
-    color: red;
-    text-align: center;
+.caixa {
+    background-color: #541F69;
 }
 
-.img {
-    width: 500px;
-    height: 500px;
-    border-radius: 5px;
-    border: solid black 2px;
-    display: block; /* Muda o display de inline para block */
-    margin: 0 auto; /* Centraliza o elemento */
+.titulo {
+    color: white; 
+    font-weight: bold;    
+}
+
+.destaque {
+    color: #B5A212;
+    font-weight: bold;
+}
+
+.botao {
+    border-color: #FFF !important;
+    background-color: #4B0069 !important; 
+    color: #FFF !important;
+}
+
+.postagens {
+    background-color: #FFF;
 }

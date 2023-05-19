@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+.agrupamentoSuperior {
+    background-color: #4B0069; 
+    height: 120px;
+}
+
+.agrupamentoInferior {
+    background-color: #4B0069; 
+    height: 60px;
+}
+
+.agrupamentoIcones {
+    display: flex;
+}
+
+.icones {
+    font-size: 60px !important;
+    margin-right: 5px; 
+    color: #FFF; 
+}
+
+.texto {
+    color: #FFF;
+    text-decoration: none;
+}
+
+mark {
+    color: #FFF;
+    background-color: #BD47EC; 
+    font-weight: bold;
+}
