@@ -5,7 +5,7 @@ import './Login.css'
 import { Link, useNavigate } from "react-router-dom";
 import UserLogin from "../../models/UserLogin";
 import useLocalStorage  from "react-use-localstorage";
-import { api } from './../../services/Service'
+import { login } from './../../services/Service'
 
 const Login = () => {
 
@@ -44,9 +44,7 @@ const Login = () => {
         e.preventDefault()
 
         try {
-            const response = await api.post(`/usuarios/logar`, userLogin)
-            setToken(response.data.token)
-            
+            await login(`/usuarios/logar`, userLogin, setToken)
             //TODO: verificar o status do response.
             //TODO: como visualizar este JSON?
             
