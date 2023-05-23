@@ -82,13 +82,15 @@ const Login = () => {
                                     Não tem uma conta?
                                 </Typography>
                             </Box>
-                                <Typography 
-                                    variant="subtitle1" 
-                                    gutterBottom
-                                    align="center"         
-                                >
-                                    <mark>Cadastre-se</mark>
-                                </Typography>
+                                <Link to="/cadastroUsuario">
+                                    <Typography
+                                        variant="subtitle1"
+                                        gutterBottom
+                                        align="center"
+                                    >
+                                        <mark>Cadastre-se</mark>
+                                    </Typography>
+                                </Link>
                         </Box>
                     </Box>
                 </Grid>
