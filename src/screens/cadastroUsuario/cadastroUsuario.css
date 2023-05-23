@@ -31,3 +31,21 @@
 .btnCancelar {
     margin-left: 10px !important;
 }
+
+.boxSenha {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.boxSenha > div {
+    width: 40%;
+}
+
+.imagemUsuario {
+    height: 100px !important;
+    width: 100px !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

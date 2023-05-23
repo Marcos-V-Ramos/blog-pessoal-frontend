@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+*::selection {
+    background-color: #4B0069;
+}
+
 .caixa {
     background-color: #541F69;
 }
