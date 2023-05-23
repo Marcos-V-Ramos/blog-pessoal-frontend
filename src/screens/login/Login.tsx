@@ -1,11 +1,63 @@
-import React from "react";
-
+import React, { ChangeEvent } from "react";
+import { useState, useEffect } from "react";
 import { Grid, Box, Typography, TextField, Button } from "@material-ui/core"; 
-
 import './Login.css'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import UserLogin from "../../models/UserLogin";
+import useLocalStorage  from "react-use-localstorage";
+import { api } from './../../services/Service'
 
 const Login = () => {
+
+    let navigate = useNavigate()
+    const [token, setToken] = useLocalStorage('token')
+
+    const [userLogin, setUserLogin] = useState<UserLogin>({
+        id: 0,
+        usuario: '',
+        senha: '',
+        token: ''
+    })
+
+    const updatedModel = (e: ChangeEvent<HTMLInputElement>) => {
+        /**
+         * O estado inicial do userLogin é um objeto UserLogin com seus valores vazios;
+         * Cada campo do formulário chamará a função setUserLogin();
+         * A função setUserLogin() atualiza o state userLogin, campo a campo;
+         * A função setUserLogin() pega o objeto atual, e muda a propriedade do campo em questão.
+         */
+        setUserLogin({
+            ...userLogin, //Spread Operator -> "espalha"
+            [e.target.name]: e.target.value // nomePropriedade (atributo HTML name do input): valorImput 
+        })
+    }
+
+    useEffect(()=> {
+        if (token !== '') {
+            alert('entrou')
+            navigate('/home')
+            // TODO: entender como funciona o navigate()
+        }
+    }, [token])
+
+    const onSubmit = async (e: ChangeEvent<HTMLFormElement>) => {
+        e.preventDefault()
+
+        try {
+            const response = await api.post(`/usuarios/logar`, userLogin)
+            setToken(response.data.token)
+            
+            //TODO: verificar o status do response.
+            //TODO: como visualizar este JSON?
+            
+            alert("Usuário logado com sucesso!")
+        } catch (err) {
+            alert(`Houve um erro ao tentar logar:\n ${err}`)
+
+            //TODO: tratar de outra forma as excessões.
+        } finally {
+        }
+    }
 
     return(
         <>
@@ -21,7 +73,7 @@ const Login = () => {
                     <Box
                         paddingX={20}
                     >
-                        <form>
+                        <form onSubmit={(e: ChangeEvent<HTMLFormElement>) => onSubmit(e)}>
                             <Typography 
                                 variant="h3" 
                                 gutterBottom 
@@ -40,6 +92,8 @@ const Login = () => {
                                 margin="normal"
                                 fullWidth
                                 type="text"
+                                value={userLogin.usuario}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                             />
                             <TextField 
                                 id="senha"
@@ -49,26 +103,24 @@ const Login = () => {
                                 margin="normal"
                                 fullWidth
                                 type="password"
+                                value={userLogin.senha}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                             />
 
                             <Box
                                 marginTop={2}
                                 textAlign="center"
                             >
-                                <Link 
-                                    to="/home"
+                            
+                                <Button 
+                                    type="submit" 
+                                    variant="contained" 
+                                    color="primary"
                                     className="text-decorator-none"
-                                    
                                 >
-                                    <Button 
-                                        type="submit" 
-                                        variant="contained" 
-                                        color="primary"
-                                        className="text-decorator-none"
-                                    >
-                                        Logar
-                                    </Button>
-                                </Link>
+                                    Logar
+                                </Button>
+                                
                             </Box>
                         </form>
                         <Box display='flex' justifyContent='center' marginTop={2}>
