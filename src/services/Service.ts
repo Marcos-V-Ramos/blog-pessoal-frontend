@@ -20,3 +20,26 @@ export const busca = async (url: string, setDado: Function, header: Object) => {
   const response = await api.get(url, header);
   setDado(response.data)
 }
+
+export const buscarPorId = async (url: string, setDado: Function, header: Object) => {
+  const response = await api.get(url, header)
+  setDado(response.data)
+  return response.status
+}
+
+export const post = async (url: string, setDado: Function, header: Object, dados: any) => {
+  const response = await api.post(url, dados, header)
+  setDado(response.data)
+  return response.status
+}
+
+export const put = async (url: string, setDado: Function, header: Object, dados: any) => {
+  const response = await api.put(url, dados, header)
+  setDado(response.data)
+  return response.status
+}
+
+export const removerPorId = async (url: string, header: Object) => {
+  const response = await api.post(url, header)
+  return [response.status, response.statusText]
+}

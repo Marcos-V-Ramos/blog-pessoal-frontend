@@ -20,12 +20,16 @@ function ListaTema() {
     }, [token])
 
     const getTema = async () => {
-        await busca('/temas', setTemas, {
-            headers: {
-                'Authorization': token,
-                'Content-Type': 'application/json'
-            }
-        })
+        try {
+            await busca('/temas', setTemas, {
+                headers: {
+                    'Authorization': token,
+                    'Content-Type': 'application/json'
+                }
+            })
+        } catch (err) {
+            alert('Houve um erro\n\n' + err)
+        }
     }
 
     useEffect(() => {
@@ -56,8 +60,7 @@ function ListaTema() {
                                             </Button>
                                         </Box>
                                     </Link>
-                                    {/* fazer os testes: 11min */}
-                                    <Link to={`/deletarTela/${temaCorrente.id}`} className="text-decorator-none">
+                                    <Link to={`/deletarTema/${temaCorrente.id}`} className="text-decorator-none">
                                         <Box mx={1}>
                                             <Button variant="contained" size='small' color="secondary">
                                                 deletar
