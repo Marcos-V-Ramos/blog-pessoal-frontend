@@ -112,6 +112,7 @@ function CadastroUsuario() {
                         />
                         <div 
                             className="imagemUsuario"
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                             style={{backgroundImage: user.foto !== '' ? `url(${user.foto})` : 'url(https://i.imgur.com/qDUPJ43_d.webp?maxwidth=760&fidelity=grand)'}}
                         >
                         </div>
