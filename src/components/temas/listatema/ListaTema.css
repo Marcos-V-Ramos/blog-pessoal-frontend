@@ -1,3 +1,19 @@
+@charset "UTF-8";
+
 .text-decorator-nome {
     text-decoration: none;
+}
+
+.listaTemas {
+    background-color: rgb(209,118,245,1);
+}
+
+.temaCorrente {
+    transition: 0.5s;
+}
+
+.temaCorrente:hover {
+    transition: 0.2s;
+    background-color: #B5A212;
+    border: solid #000 2px;
 }

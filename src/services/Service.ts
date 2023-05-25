@@ -40,6 +40,6 @@ export const put = async (url: string, setDado: Function, header: Object, dados:
 }
 
 export const removerPorId = async (url: string, header: Object) => {
-  const response = await api.post(url, header)
+  const response = await api.delete(url, header)
   return [response.status, response.statusText]
 }

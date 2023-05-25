@@ -41,7 +41,7 @@ function ListaTema() {
             {
                 temas.map(temaCorrente => (
                     <Box m={2} >
-                        <Card variant="outlined">
+                        <Card className='temaCorrente' variant="outlined">
                             <CardContent>
                                 <Typography color="textSecondary" gutterBottom>
                                     Tema ID {temaCorrente.id}
