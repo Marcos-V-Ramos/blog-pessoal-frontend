@@ -4,7 +4,7 @@ import Carrossel  from '../../components/carrossel/Carrossel';
 import './Home.css';
 import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
 
-const Home = () => {
+function Home(props) {
     return (
         <>
             <Grid container direction="row" justifyContent="center" alignItems="center" className="caixa">
