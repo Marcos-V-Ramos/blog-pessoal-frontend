@@ -9,7 +9,7 @@ import CadastroPost from '../cadastroPostagem/CadastroPost';
 
 
 function getModalStyle() {
-  const top = 50 ;
+  const top = 50;
   const left = 50;
 
   return {
