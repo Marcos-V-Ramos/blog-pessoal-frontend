@@ -3,7 +3,8 @@ import UserLogin from '../models/UserLogin'
 import User from '../models/User'
 
 export const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL
+  // baseURL: import.meta.env.VITE_API_URL
+  baseURL: process.env.VITE_API_URL
 })
 
 export const login = async (url : string, dados: UserLogin, setDado: Function) => {
