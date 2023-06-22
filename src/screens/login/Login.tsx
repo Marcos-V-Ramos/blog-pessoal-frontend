@@ -4,13 +4,15 @@ import { Grid, Box, Typography, TextField, Button } from "@material-ui/core";
 import './Login.css'
 import { Link, useNavigate } from "react-router-dom";
 import UserLogin from "../../models/UserLogin";
-import useLocalStorage  from "react-use-localstorage";
 import { login } from './../../services/Service'
+import { useDispatch } from "react-redux";
+import { addToken } from "../../store/tokens/actions";
 
 const Login = () => {
 
     let navigate = useNavigate()
-    const [token, setToken] = useLocalStorage('token')
+    const [token, setToken] = useState('')
+    const dispatch = useDispatch();
 
     const [userLogin, setUserLogin] = useState<UserLogin>({
         id: 0,
@@ -34,7 +36,7 @@ const Login = () => {
 
     useEffect(()=> {
         if (token !== '') {
-            alert('entrou')
+            dispatch(addToken(token))
             navigate('/home')
             // TODO: entender como funciona o navigate()
         }

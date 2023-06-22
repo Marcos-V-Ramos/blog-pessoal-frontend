@@ -1,5 +1,6 @@
-interface Store {
+import { createStore } from 'redux';
+import { tokenReducer } from './tokens/tokensReducer';
 
-}
+const store = createStore(tokenReducer);
 
-export default Store
+export default store;
