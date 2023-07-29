@@ -3,8 +3,8 @@ import UserLogin from '../models/UserLogin'
 import User from '../models/User'
 
 export const api = axios.create({
-  baseURL: 'https://blogpessoal-2vbd.onrender.com'
-  // baseURL: process.env.VITE_API_URL
+  // baseURL: 'https://blogpessoal-2vbd.onrender.com' -> development
+  baseURL: process.env.VITE_API_URL // -> production
 })
 
 export const login = async (url : string, dados: UserLogin, setDado: Function) => {
